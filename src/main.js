@@ -19,4 +19,39 @@ const contactBtn = document.querySelector('.contact-btn');
 //   contactBtn.addEventListener('click', () => {
 //     alert('Contact form coming soon!');
 //   });
-// } 
+// }
+
+// Page loader for homepage (show only on first visit in session)
+window.addEventListener('load', () => {
+  const loader = document.getElementById('page-loader');
+  if (loader) {
+    if (sessionStorage.getItem('loaderShown')) {
+      loader.classList.add('hide');
+    } else {
+      setTimeout(() => loader.classList.add('hide'), 2500);
+      sessionStorage.setItem('loaderShown', 'true');
+    }
+  }
+});
+
+// Hamburger menu for mobile nav (mobile only)
+const hamburger = document.getElementById('hamburger-menu');
+const mobileNav = document.getElementById('mobileNav');
+if (hamburger && mobileNav) {
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mobileNav.classList.toggle('open');
+  });
+  // Close menu when clicking a link
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+    });
+  });
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (mobileNav.classList.contains('open') && !mobileNav.contains(e.target) && e.target !== hamburger) {
+      mobileNav.classList.remove('open');
+    }
+  });
+} 

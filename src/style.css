@@ -39,8 +39,9 @@ body {
 }
 
 /* Navbar */
-header {
-  padding-top: 0;
+header, .navbar {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 .navbar {
   position: fixed;
@@ -1046,7 +1047,7 @@ header {
 
 @media (max-width: 700px) {
   .nav-links {
-    display: flex;
+    display: none;
   }
 }
 
@@ -1222,4 +1223,217 @@ header {
   .about-vogueon-text p {
     font-size: 1rem;
   }
+}
+
+#page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s;
+}
+#page-loader.hide {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+#page-loader video {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  object-fit: cover;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+#hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 200;
+  position: fixed;
+  right: 1.2rem;
+  top: 1.2rem;
+  margin: 0;
+}
+#hamburger-menu span {
+  display: block;
+  width: 2rem;
+  height: 0.22rem;
+  background: #222;
+  margin: 0.28rem 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70vw;
+  max-width: 320px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -2px 0 16px 0 rgba(0,0,0,0.12);
+  z-index: 300;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  gap: 1.2rem;
+  align-items: flex-start;
+  font-size: 1.1rem;
+}
+.mobile-nav a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.7rem 0;
+  width: 100%;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+.mobile-nav a:hover {
+  background: #ffd1e3;
+}
+.mobile-nav.open {
+  display: flex;
+}
+@media (max-width: 700px) {
+  .nav-links {
+    display: none;
+  }
+  #hamburger-menu {
+    display: flex;
+  }
+  .mobile-nav {
+    display: none;
+  }
+  .mobile-nav.open {
+    display: flex;
+  }
+}
+
+.shop-striking-video {
+  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 0;
+}
+.shop-striking-video video {
+  width: 100vw;
+  max-width: 100vw;
+  height: 38vh;
+  min-height: 120px;
+  max-height: 350px;
+  object-fit: cover;
+  display: block;
+}
+.shop-main {
+  width: 100%;
+  padding: 2.5rem 0 2rem 0;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.shop-title {
+  font-size: 2rem;
+  color: #6c63ff;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  max-width: 1100px;
+  justify-items: center;
+}
+.shop-card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  max-width: 320px;
+  min-width: 0;
+}
+.shop-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px 0 rgba(108,99,255,0.13);
+}
+.shop-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  border-radius: 0.7rem;
+  background: #f7f7fa;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+}
+.shop-card h3 {
+  font-size: 1.15rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.shop-card p {
+  color: #444;
+  font-size: 1rem;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+  .shop-striking-video video {
+    height: 24vh;
+    max-height: 180px;
+    min-height: 80px;
+  }
+}
+@media (max-width: 600px) {
+  .shop-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .shop-card {
+    padding: 1rem 0.5rem 0.7rem 0.5rem;
+    max-width: 98vw;
+  }
+  .shop-striking-video video {
+    height: 16vh;
+    max-height: 100px;
+    min-height: 50px;
+  }
+}
+
+body:not(.home-page) .main-content,
+body:not(.home-page) .login-main,
+body:not(.home-page) .contact-main,
+body:not(.home-page) .shop-main,
+body:not(.home-page) .billing-main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 } 
