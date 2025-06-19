@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vogueon Billing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="https://api.dicebear.com/7.x/shapes/svg?seed=ai-shop" alt="Vogueon Shop Logo" height="40" />
+        <span>Vogueon Shop</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="home-btn">Home</a></li>
+        <li><a href="index.html" class="shop-btn">Shop</a></li>
+        <li><a href="billing.html" class="billing-btn">Billing</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="billing-main">
+    <form class="billing-form">
+      <h2>Billing Details</h2>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" required>
+      <label for="card">Card Number</label>
+      <input type="text" id="card" name="card" maxlength="19" placeholder="1234 5678 9012 3456" required>
+      <div class="billing-row">
+        <div>
+          <label for="expiry">Expiry</label>
+          <input type="text" id="expiry" name="expiry" maxlength="5" placeholder="MM/YY" required>
+        </div>
+        <div>
+          <label for="cvv">CVV</label>
+          <input type="password" id="cvv" name="cvv" maxlength="4" required>
+        </div>
+      </div>
+      <button type="submit" class="pay-btn">Pay Now</button>
+    </form>
+  </main>
+
+  <div class="billing-feature-video">
+    <video src="assests/features-services.mp4" autoplay loop muted playsinline></video>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html> 

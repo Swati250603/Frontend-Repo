@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vogueon Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="https://api.dicebear.com/7.x/shapes/svg?seed=ai-shop" alt="Vogueon Shop Logo" height="40" />
+        <span>Vogueon Shop</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="home-btn">Home</a></li>
+    
+      </ul>
+    </nav>
+  </header>
+
+  <main class="login-main">
+    <form class="login-form">
+      <h2>Login to Your Account</h2>
+      <label for="login-email">Email</label>
+      <input type="email" id="login-email" name="email" required>
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" name="password" required>
+      <div class="login-row">
+        <label><input type="checkbox" name="remember"> Remember me</label>
+        <a href="#" class="forgot-link">Forgot password?</a>
+      </div>
+      <button type="submit" class="login-submit-btn">Login</button>
+      <div class="register-link">Don't have an account? <a href="#">Register</a></div>
+    </form>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html> 
